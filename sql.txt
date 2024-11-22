@@ -1,0 +1,32 @@
+CREATE TABLE `quiz_state` (
+user_id Uint64, 
+question_index Uint64,
+PRIMARY KEY (`user_id`)
+);
+
+CREATE TABLE `quiz_data` (
+    question_id Uint64,
+    question Utf8,
+    options Utf8,
+    correct_option Uint64,
+    PRIMARY KEY(`question_id`)
+);
+
+CREATE TABLE `quiz_results` (
+    user_id Uint64,
+    correct_answers Uint64,
+    PRIMARY KEY(`user_id`)
+);
+
+UPSERT INTO `quiz_data` (question_id, question, options, correct_option) VALUES
+(1, 'Что такое Python?', 'Язык программирования,Тип данных,Музыкальный инструмент,Змея на английском', 0),
+(2, 'Какой тип данных используется для хранения целых чисел?', 'int,float,str,natural', 0),
+(3, 'Какой оператор используется для возведения в степень в Python?', '^,**,//,%', 1),
+(4, 'Что делает функция len() в Python?', 'Возвращает длину объекта,Удаляет объект,Создает объект,Изменяет объект', 0),
+(5, 'Как создать комментарий в Python?', '//,#,/*,<!-- -->', 1),
+(6, 'Какой метод используется для добавления элемента в конец списка?', '.append(),.insert(),.add(),.push()', 0),
+(7, 'Какой цикл используется для итерации по последовательности?', 'while,for,loop,iterate', 1),
+(8, 'Какая функция используется для вывода текста в консоль в Python?', 'print(),echo(),console.log(),write()', 0),
+(9, 'Как объявить функцию в Python?', 'function myFunc(),def myFunc(),create myFunc(),fun myFunc()', 1),
+(10, 'Какой метод используется для сортировки списка?', '.sort(),.order(),.arrange(),.shuffle()', 0);
+

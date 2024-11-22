@@ -1,0 +1,3 @@
+aiogram
+ydb
+python-dotenv
